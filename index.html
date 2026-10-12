@@ -4,9 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<script>
+/* Ouverture animée : une fois par visite, jamais si l'appareil demande moins d'animations.
+   Pour la revoir : ajouter ?intro à l'adresse. */
+(function () {
+  try {
+    var calme = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var forcee = /[?&#]intro/.test(location.search + location.hash);
+    if (!calme && (forcee || !sessionStorage.getItem("intro-vue"))) {
+      document.documentElement.classList.add("intro-on");
+      sessionStorage.setItem("intro-vue", "1");
+    }
+  } catch (e) {}
+})();
+</script>
 <title>Invitation Hanna &amp; Alex</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Dancing+Script:wght@500&family=Great+Vibes&display=swap">
 <style>
 :root{
   /* crème dentelle, bois brut, verre upcyclé — d'après le moodboard */
@@ -75,9 +89,9 @@ button,input,select,textarea{font:inherit; color:inherit}
 .hero .wrap{padding-block:52px 62px}
 .hero .eyebrow{color:var(--hero-muted)}
 .heroGrid{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
-.hero h1{font-size:clamp(44px,9.5vw,76px); font-weight:300; font-style:italic; line-height:1.02; margin-top:14px; letter-spacing:-.02em}
-.hero h1 .amp{font-style:normal; font-weight:400; color:var(--hero-muted); padding-inline:.06em}
-.hero .lede{font-family:"Spectral",Georgia,serif; font-size:clamp(16.5px,2.2vw,19px); font-weight:300; line-height:1.6;
+.hero h1{font-family:"Great Vibes","Snell Roundhand","Apple Chancery",cursive; font-size:clamp(56px,11vw,88px); font-weight:400; font-style:normal; line-height:1.02; margin-top:10px; letter-spacing:0}
+.hero h1 .amp{font-style:normal; font-weight:400; color:var(--hero-muted); padding-inline:.04em .16em}
+.hero .lede{font-family:"Dancing Script","Segoe Script","Bradley Hand",cursive; font-size:clamp(22px,3vw,28px); font-weight:500; line-height:1.5;
             max-width:34em; margin-top:20px; opacity:.93}
 .heroFacts{display:flex; flex-wrap:wrap; gap:12px 30px; margin-top:26px; align-items:baseline}
 .heroFacts .k{font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--hero-muted); font-weight:600}
@@ -110,6 +124,49 @@ button,input,select,textarea{font:inherit; color:inherit}
 .scallop{height:22px; background-color:var(--hero-bg);
          background-image:radial-gradient(circle at 11px 11px, var(--ground) 11px, rgba(0,0,0,0) 11.6px);
          background-size:22px 22px; background-repeat:repeat-x; background-position:0 0}
+
+/* ---------- manuscrit & ouverture ---------- */
+.hero h1{padding:.06em .2em .14em; margin-inline:-.2em}
+.swash{display:block; width:min(300px,72%); height:auto; margin-top:2px; fill:none; stroke:var(--hero-muted); stroke-width:2.2; stroke-linecap:round}
+.swash path{stroke-dasharray:1; stroke-dashoffset:0}
+.mot{display:inline-block; white-space:nowrap}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+@keyframes ecrire{from{-webkit-mask-position:100% 0; mask-position:100% 0} to{-webkit-mask-position:0 0; mask-position:0 0}}
+@keyframes ecrit{from{opacity:0} to{opacity:1}}
+@keyframes apparait{from{opacity:0; translate:0 14px} to{opacity:1; translate:0 0}}
+@keyframes poser{from{opacity:0; translate:0 26px; rotate:-7deg} to{opacity:1; translate:0 0; rotate:-1.6deg}}
+@keyframes tracer{from{stroke-dashoffset:1} to{stroke-dashoffset:0}}
+@keyframes ouvrir{0%{clip-path:inset(0 0 0 0)} 90%,100%{clip-path:inset(0 0 0 100%)}}
+@keyframes ramper{0%{transform:translateX(-36px)} 90%{transform:translateX(calc(100vw - 36px))} 100%{transform:translateX(calc(100vw + 60px))}}
+@keyframes sillage{0%{transform:scaleX(0); opacity:1} 90%{transform:scaleX(1); opacity:1} 100%{transform:scaleX(1); opacity:0}}
+@keyframes disparaitre{to{visibility:hidden; pointer-events:none}}
+
+#intro{display:none}
+.intro-on #intro{display:block; position:fixed; inset:0; z-index:200; cursor:pointer; animation:disparaitre .01s linear 3.7s forwards}
+.voile{position:absolute; inset:0; background:var(--ground); animation:ouvrir 3.6s linear forwards}
+.voile::after{content:"Touchez pour passer"; position:absolute; left:0; right:0; bottom:calc(22px + env(safe-area-inset-bottom, 0px));
+              text-align:center; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.traine{position:absolute; left:0; top:50%; width:100%; height:3px; margin-top:-1px; border-radius:2px; transform-origin:left center;
+        background:color-mix(in srgb, var(--hero-ink) 78%, transparent); animation:sillage 3.6s linear forwards}
+.limace{position:absolute; left:0; top:50%; width:72px; height:72px; margin-top:-36px; box-shadow:0 4px 14px rgba(0,0,0,.22);
+        animation:ramper 3.6s linear forwards}
+.limace img{animation:wobble .6s ease-in-out infinite}
+
+.intro-on .hero h1{
+  -webkit-mask-image:linear-gradient(90deg,#000 0,#000 33.3%,transparent 38.5%,transparent 100%);
+  mask-image:linear-gradient(90deg,#000 0,#000 33.3%,transparent 38.5%,transparent 100%);
+  -webkit-mask-size:300% 100%; mask-size:300% 100%;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  -webkit-mask-position:0 0; mask-position:0 0;
+  animation:ecrire 1.7s cubic-bezier(.5,0,.3,1) 1.3s backwards}
+.intro-on .hero .eyebrow{animation:apparait 1s ease .8s backwards}
+.intro-on .swash path{animation:tracer 1.2s ease-in-out 2.7s backwards}
+.intro-on .c{animation:ecrit .3s ease-out calc(2s + var(--i) * 11ms) backwards}
+.intro-on .heroFacts{animation:apparait .9s ease 5.2s backwards}
+.intro-on .heroCta{animation:apparait .9s ease 5.6s backwards}
+.intro-on .photoFrame{animation:poser 1.2s cubic-bezier(.2,.8,.2,1) 2.4s backwards}
+@media (prefers-reduced-motion:reduce){#intro{display:none !important}}
 
 /* ---------- escargots en mouvement ---------- */
 @keyframes crawl{from{transform:translateX(-60px)} to{transform:translateX(calc(100vw + 20px))}}
@@ -226,13 +283,20 @@ footer .tba{color:var(--peach)}
 </head>
 <body>
 
+<div id="intro" aria-hidden="true">
+  <div class="voile"></div>
+  <div class="traine"></div>
+  <div class="limace seal"><img src="escargot.png" alt=""></div>
+</div>
+
 <header class="hero">
   <div class="wrap">
     <div class="heroGrid">
       <div>
         <p class="eyebrow">Samedi 29 mai 2027 · Cornillé-les-Caves, Anjou</p>
         <h1>Hanna <span class="amp">&amp;</span> Alex</h1>
-        <p class="lede">Nous sommes ravis de vous inviter à notre mariage, dans le village de Cornillé-les-Caves. Vous trouverez sur cette page toutes les informations, que nous mettrons à jour au fur et à mesure des préparatifs, ainsi que le formulaire pour confirmer votre réponse. On a hâte de vous retrouver pour faire la fête&nbsp;!</p>
+        <svg class="swash" viewBox="0 0 400 24" aria-hidden="true" focusable="false"><path pathLength="1" d="M4 15 C 50 3, 92 23, 142 12 S 232 5, 272 14 S 342 21, 396 8"></path></svg>
+        <p class="lede" id="lede">Nous sommes ravis de vous inviter à notre mariage, dans le village de Cornillé-les-Caves. Vous trouverez sur cette page toutes les informations, que nous mettrons à jour au fur et à mesure des préparatifs, ainsi que le formulaire pour confirmer votre réponse. On a hâte de vous retrouver pour faire la fête&nbsp;!</p>
         <div class="heroFacts">
           <div><div class="k">Le jour</div><div class="v">Samedi 29 mai 2027</div></div>
           <div><div class="k">Le lieu</div><div class="v">Cornillé-les-Caves (49)</div></div>
@@ -476,6 +540,48 @@ var RSVP_CHAMPS = {
   logement: "entry.511685134",
   mot:      "entry.698017143"
 };
+
+/* ---- Ouverture : texte manuscrit lettre à lettre + passage de l'escargot ---- */
+(function () {
+  var racine = document.documentElement;
+  var intro = document.getElementById("intro");
+  if (!racine.classList.contains("intro-on") || !intro) return;
+
+  var lede = document.getElementById("lede");
+  if (lede) {
+    var texte = lede.textContent;
+    var n = 0;
+    var anime = document.createElement("span");
+    var lisible = document.createElement("span");
+    anime.setAttribute("aria-hidden", "true");
+    lisible.className = "sr";
+    lisible.textContent = texte;
+    texte.split(/( +)/).forEach(function (morceau) {
+      if (!morceau) return;
+      if (morceau.charAt(0) === " ") { anime.appendChild(document.createTextNode(" ")); return; }
+      var mot = document.createElement("span");
+      mot.className = "mot";
+      Array.prototype.forEach.call(morceau, function (lettre) {
+        var c = document.createElement("span");
+        c.className = "c";
+        c.style.setProperty("--i", n++);
+        c.textContent = lettre;
+        mot.appendChild(c);
+      });
+      anime.appendChild(mot);
+    });
+    lede.textContent = "";
+    lede.appendChild(lisible);
+    lede.appendChild(anime);
+  }
+
+  function finir() {
+    racine.classList.remove("intro-on");
+    intro.hidden = true;
+  }
+  intro.addEventListener("pointerdown", finir);
+  intro.querySelector(".voile").addEventListener("animationend", function () { intro.hidden = true; });
+})();
 
 /* ---- Escargot qui suit le défilement ---- */
 (function () {
