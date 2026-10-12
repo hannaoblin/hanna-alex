@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Invitation Hanna &amp; Alex</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+<style>
+:root{
+  /* crème dentelle, bois brut, verre upcyclé — d'après le moodboard */
+  --ground:#FAF4E9; --surface:#FFFFFF; --surface-2:#F3EADA;
+  --ink:#2A1D1F; --muted:#7C6A61; --line:#E5D8C4; --line-soft:#EFE6D6;
+  --bottle:#1C4133; --bottle-ink:#143028; --bottle-soft:#E6EDE3; --on-bottle:#FAF4E9;
+  --prairie:#7EA845;
+  --bordeaux:#8A1538; --bordeaux-soft:#F7E4E8;
+  --raspberry:#B52A5B;
+  --coquelicot:#D6371F; --coquelicot-ink:#B32A15;
+  --peach:#F4CFA6; --peach-soft:#FBEDDB;
+  --hero-bg:#1C4133; --hero-ink:#FAF4E9; --hero-muted:#A7C0AB;
+  --shadow:0 1px 2px rgba(42,29,31,.06), 0 10px 30px rgba(42,29,31,.08);
+  --r:5px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#171512; --surface:#201D18; --surface-2:#282318;
+    --ink:#F0E8DA; --muted:#A2938A; --line:#3A332A; --line-soft:#2C2721;
+    --bottle:#8FBE9B; --bottle-ink:#A9D2B2; --bottle-soft:#1D2B22; --on-bottle:#12201A;
+    --prairie:#A8CC6C;
+    --bordeaux:#E08CA0; --bordeaux-soft:#331A20;
+    --raspberry:#E7789F;
+    --coquelicot:#F26B51; --coquelicot-ink:#F98A72;
+    --peach:#E9C193; --peach-soft:#2E2519;
+    --hero-bg:#10231C; --hero-ink:#F0E8DA; --hero-muted:#8FA894;
+    --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#171512; --surface:#201D18; --surface-2:#282318;
+  --ink:#F0E8DA; --muted:#A2938A; --line:#3A332A; --line-soft:#2C2721;
+  --bottle:#8FBE9B; --bottle-ink:#A9D2B2; --bottle-soft:#1D2B22; --on-bottle:#12201A;
+  --prairie:#A8CC6C;
+  --bordeaux:#E08CA0; --bordeaux-soft:#331A20;
+  --raspberry:#E7789F;
+  --coquelicot:#F26B51; --coquelicot-ink:#F98A72;
+  --peach:#E9C193; --peach-soft:#2E2519;
+  --hero-bg:#10231C; --hero-ink:#F0E8DA; --hero-muted:#8FA894;
+  --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+body{
+  background:var(--ground); color:var(--ink); margin:0;
+  font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{margin:0; text-wrap:balance; font-family:"Spectral",Georgia,"Times New Roman",serif; font-weight:600; letter-spacing:-.012em}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%}
+button,input,select,textarea{font:inherit; color:inherit}
+:focus-visible{outline:2px solid var(--coquelicot); outline-offset:2px; border-radius:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important}}
+.wrap{max-width:880px; margin:0 auto; padding-inline:20px}
+.eyebrow{font-size:11px; letter-spacing:.15em; text-transform:uppercase; font-weight:600; color:var(--muted)}
+
+/* ---------- emblème colimaçon ---------- */
+.seal{display:grid; place-items:center; border-radius:50%; background:#FAF4E9;
+      border:1px solid rgba(42,29,31,.10); flex:none; overflow:hidden}
+.seal img{width:82%; height:auto; mix-blend-mode:multiply}
+
+/* ---------- hero ---------- */
+.hero{background:var(--hero-bg); color:var(--hero-ink); position:relative}
+.hero .wrap{padding-block:52px 62px}
+.hero .eyebrow{color:var(--hero-muted)}
+.heroGrid{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
+.hero h1{font-size:clamp(44px,9.5vw,76px); font-weight:300; font-style:italic; line-height:1.02; margin-top:14px; letter-spacing:-.02em}
+.hero h1 .amp{font-style:normal; font-weight:400; color:var(--hero-muted); padding-inline:.06em}
+.hero .lede{font-family:"Spectral",Georgia,serif; font-size:clamp(16.5px,2.2vw,19px); font-weight:300; line-height:1.6;
+            max-width:34em; margin-top:20px; opacity:.93}
+.heroFacts{display:flex; flex-wrap:wrap; gap:12px 30px; margin-top:26px; align-items:baseline}
+.heroFacts .k{font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--hero-muted); font-weight:600}
+.heroFacts .v{font-family:"Spectral",Georgia,serif; font-size:19px; margin-top:2px}
+.heroFacts .count{font-variant-numeric:tabular-nums; color:var(--peach)}
+.heroCta{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:28px}
+.btn{display:inline-block; padding:12px 22px; border-radius:var(--r); font-weight:600; font-size:14px;
+     text-decoration:none; cursor:pointer; border:1px solid transparent}
+.btn.pop{background:var(--coquelicot); color:#FFF8F2; border-color:var(--coquelicot)}
+.btn.pop:hover{background:var(--coquelicot-ink); border-color:var(--coquelicot-ink)}
+.btn.ghost{background:transparent; color:var(--hero-ink); border-color:rgba(250,244,233,.32)}
+.btn.ghost:hover{border-color:var(--hero-ink)}
+
+.photoFrame{position:relative; justify-self:center; width:100%; max-width:300px; rotate:-1.6deg}
+.photoFrame .plate{background:#FAF4E9; padding:11px 11px 46px; border-radius:2px;
+                   box-shadow:0 2px 4px rgba(0,0,0,.18), 0 18px 40px rgba(0,0,0,.28)}
+.photoFrame img.shot{display:block; width:100%; aspect-ratio:9/10; object-fit:cover; object-position:50% 28%; border-radius:1px}
+.photoFrame .cap{position:absolute; left:0; right:0; bottom:14px; text-align:center;
+                 font-family:"Spectral",Georgia,serif; font-style:italic; font-size:14px; color:#5E4A3E}
+.photoFrame .seal{position:absolute; width:78px; height:78px; right:-24px; bottom:-26px; rotate:6deg;
+                  box-shadow:0 3px 10px rgba(0,0,0,.22)}
+@media (max-width:720px){
+  .heroGrid{grid-template-columns:1fr; gap:34px}
+  .photoFrame{max-width:260px; justify-self:start}
+  .photoFrame .seal{right:-18px; width:66px; height:66px}
+}
+
+/* feston de dentelle au crochet */
+.scallop{height:22px; background-color:var(--hero-bg);
+         background-image:radial-gradient(circle at 11px 11px, var(--ground) 11px, rgba(0,0,0,0) 11.6px);
+         background-size:22px 22px; background-repeat:repeat-x; background-position:0 0}
+
+/* ---------- nav ---------- */
+nav.sticky{position:sticky; top:env(safe-area-inset-top, 0px); z-index:20;
+           background:var(--ground); border-bottom:1px solid var(--line)}
+nav.sticky .wrap{display:flex; gap:4px; overflow-x:auto; padding-block:9px; scrollbar-width:none}
+nav.sticky .wrap::-webkit-scrollbar{display:none}
+nav.sticky a{flex:none; padding:7px 13px; border-radius:var(--r); font-size:13px; font-weight:600;
+             color:var(--muted); text-decoration:none; white-space:nowrap}
+nav.sticky a:hover{background:var(--surface-2); color:var(--ink)}
+
+/* ---------- sections ---------- */
+section{padding-block:50px}
+.secHead{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:8px}
+.secHead h2{font-size:clamp(26px,4.4vw,34px)}
+.secNote{font-size:14px; color:var(--muted); max-width:62ch; margin-top:10px}
+.tag{display:inline-flex; align-items:center; font-size:11px; font-weight:700; letter-spacing:.09em;
+     text-transform:uppercase; color:var(--bordeaux); background:var(--bordeaux-soft);
+     border:1px solid var(--bordeaux); padding:4px 9px; border-radius:100px}
+
+/* séparateur signé */
+.rule{display:flex; align-items:center; gap:16px; max-width:880px; margin:0 auto; padding-inline:20px}
+.rule::before, .rule::after{content:""; flex:1; height:1px; background:var(--line)}
+.rule .seal{width:42px; height:42px}
+
+/* ---------- venir ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(224px,1fr)); gap:16px; margin-top:24px}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:18px 18px 20px}
+.card h3{font-family:"Archivo",sans-serif; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+         color:var(--muted)}
+.card .big{font-family:"Spectral",Georgia,serif; font-size:24px; margin-top:9px; line-height:1.25}
+.card p.note{font-size:13.5px; color:var(--muted); margin-top:7px}
+.tip{margin-top:18px; display:flex; gap:14px; align-items:flex-start;
+     background:var(--peach-soft); border-left:3px solid var(--peach);
+     border-radius:0 var(--r) var(--r) 0; padding:15px 17px}
+.tip .seal{width:38px; height:38px; margin-top:1px}
+.tip p{font-size:14px; max-width:58ch}
+.tip strong{color:var(--bordeaux)}
+
+/* ---------- logements ---------- */
+.filters{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px}
+.chip{border:1px solid var(--line); background:var(--surface); border-radius:100px; padding:7px 15px;
+      font-size:13px; font-weight:600; color:var(--muted); cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--bottle); border-color:var(--bottle); color:var(--on-bottle)}
+.stays{margin-top:20px; border-top:1px solid var(--line)}
+.stay{display:grid; grid-template-columns:66px 1fr auto; gap:18px; align-items:baseline;
+      padding-block:15px; border-bottom:1px solid var(--line-soft)}
+.stay .km{font-family:"Spectral",Georgia,serif; font-size:20px; font-variant-numeric:tabular-nums; color:var(--bottle); white-space:nowrap}
+.stay .km small{font-size:11px; font-family:"Archivo",sans-serif; color:var(--muted); font-weight:600; margin-left:2px}
+.stay .name{font-size:15.5px; font-weight:600}
+.stay .name a{text-decoration:none; border-bottom:1px solid var(--prairie)}
+.stay .name a:hover{border-bottom-color:var(--bottle)}
+.stay .meta{font-size:13px; color:var(--muted); margin-top:3px}
+.stay .cap{font-size:13px; color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums; text-align:right}
+.stay .cap b{color:var(--ink); font-weight:600}
+.stay[hidden]{display:none}
+@media (max-width:560px){
+  .stay{grid-template-columns:56px 1fr; gap:14px}
+  .stay .cap{grid-column:2; text-align:left; margin-top:4px}
+}
+.staysFoot{font-size:13px; color:var(--muted); margin-top:16px; max-width:64ch}
+
+/* ---------- rsvp ---------- */
+.formWrap{background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+          padding:24px; margin-top:24px; box-shadow:var(--shadow)}
+.fieldRow{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:18px}
+.field{display:flex; flex-direction:column; gap:6px}
+.field label{font-size:12px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--muted)}
+.field .hint{font-size:12.5px; color:var(--muted); font-weight:400; letter-spacing:0; text-transform:none}
+.field .aide{font-size:13.5px; color:var(--bordeaux); background:var(--bordeaux-soft);
+             border-left:3px solid var(--bordeaux); border-radius:0 var(--r) var(--r) 0;
+             padding:10px 13px; max-width:58ch}
+.field input, .field select, .field textarea{
+  background:var(--ground); border:1px solid var(--line); border-radius:var(--r); padding:10px 12px; font-size:15px; width:100%}
+.field textarea{resize:vertical; min-height:84px}
+.spaced{margin-top:20px}
+.radioSet{display:flex; gap:10px; flex-wrap:wrap}
+.radioSet label{display:flex; align-items:center; gap:9px; flex:1 1 190px; cursor:pointer;
+                border:1px solid var(--line); border-radius:var(--r); padding:13px 15px; background:var(--ground);
+                font-size:15px; font-weight:600; letter-spacing:0; text-transform:none; color:var(--ink)}
+.radioSet label:has(input:checked){border-color:var(--bottle); background:var(--bottle-soft); color:var(--bottle)}
+.radioSet input{accent-color:var(--bottle); width:auto}
+.submitRow{display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:24px;
+           padding-top:20px; border-top:1px solid var(--line-soft)}
+.btnMain{display:inline-block; background:var(--coquelicot); color:#FFF8F2; border:1px solid var(--coquelicot);
+         padding:13px 26px; border-radius:var(--r); font-weight:700; font-size:15px; cursor:pointer;
+         text-decoration:none; text-align:center}
+.btnMain:hover{background:var(--coquelicot-ink); border-color:var(--coquelicot-ink)}
+.submitRow .small{font-size:13px; color:var(--muted)}
+.formMsg{margin-top:16px; padding:14px 16px; border-radius:var(--r); font-size:14px; display:none}
+.formMsg.show{display:block}
+.formMsg.ok{background:var(--bottle-soft); border:1px solid var(--bottle); color:var(--bottle)}
+.formMsg.err{background:var(--bordeaux-soft); border:1px solid var(--bordeaux); color:var(--bordeaux)}
+
+/* ---------- pied ---------- */
+footer{background:var(--hero-bg); color:var(--hero-ink); margin-top:20px}
+footer .wrap{padding-block:44px 54px; text-align:center}
+footer .seal{width:72px; height:72px; margin:0 auto 18px}
+footer .sig{font-family:"Spectral",Georgia,serif; font-style:italic; font-size:26px; margin-bottom:10px}
+footer p.fine{color:var(--hero-muted); font-size:13.5px}
+.tba{color:var(--bordeaux); font-weight:600}
+footer .tba{color:var(--peach)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="heroGrid">
+      <div>
+        <p class="eyebrow">Samedi 29 mai 2027 · Cornillé-les-Caves, Anjou</p>
+        <h1>Hanna <span class="amp">&amp;</span> Alex</h1>
+        <p class="lede">Nous sommes ravis de vous inviter à notre mariage, dans le village de Cornillé-les-Caves. Vous trouverez sur cette page toutes les informations, que nous mettrons à jour au fur et à mesure des préparatifs, ainsi que le formulaire pour confirmer votre réponse. On a hâte de vous retrouver pour faire la fête&nbsp;!</p>
+        <div class="heroFacts">
+          <div><div class="k">Le jour</div><div class="v">Samedi 29 mai 2027</div></div>
+          <div><div class="k">Le lieu</div><div class="v">Cornillé-les-Caves (49)</div></div>
+          <div><div class="k">Dans</div><div class="v count" id="countdown">—</div></div>
+        </div>
+        <div class="heroCta">
+          <a class="btn pop" href="#repondre">Répondre à l'invitation</a>
+          <a class="btn ghost" href="#dormir">Où dormir sur place</a>
+        </div>
+      </div>
+      <figure class="photoFrame">
+        <div class="plate">
+          <img class="shot" src="couple.jpg" alt="Hanna et Alex dans un parc, elle en chapeau canotier fait un signe de la main">
+        </div>
+        <figcaption class="cap">Hanna &amp; Alex</figcaption>
+        <div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div>
+      </figure>
+    </div>
+  </div>
+</header>
+<div class="scallop" aria-hidden="true"></div>
+
+<nav class="sticky" aria-label="Sections du site">
+  <div class="wrap">
+    <a href="#jour">Le jour J</a>
+    <a href="#venir">Venir &amp; se garer</a>
+    <a href="#dormir">Où dormir</a>
+    <a href="#repondre">Répondre</a>
+  </div>
+</nav>
+
+<main>
+<section id="jour" class="wrap">
+  <div class="secHead">
+    <h2>Le déroulé du samedi</h2>
+    <span class="tag">Information à venir</span>
+  </div>
+  <p class="secNote">Nous préciserons ici le déroulé et les horaires de la journée avant l'envoi des faire-part.</p>
+</section>
+
+<div class="rule"><div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div></div>
+
+<section id="venir" class="wrap">
+  <div class="secHead"><h2>Venir &amp; se garer</h2></div>
+  <p class="secNote">Cornillé-les-Caves est un village du Baugeois, à une vingtaine de kilomètres à l'est d'Angers. Il n'y a pas de gare, mais quelques bus desservent le village depuis Angers.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Adresse</h3>
+      <p class="big">Cornillé-les-Caves<br>49140</p>
+      <p class="note tba">Adresse exacte et point GPS à venir</p>
+    </div>
+    <div class="card">
+      <h3>Depuis Angers</h3>
+      <p class="big">environ 25 min</p>
+      <p class="note">Une vingtaine de kilomètres. Gare la plus proche : Angers Saint-Laud, à environ 1 h 35 de Paris en TGV.</p>
+    </div>
+    <div class="card">
+      <h3>Stationnement</h3>
+      <p class="big tba">à préciser</p>
+      <p class="note">Nous indiquerons ici où se garer et combien de places sont disponibles à proximité immédiate.</p>
+    </div>
+  </div>
+  <div class="tip">
+    <div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div>
+    <p><strong>Covoiturage :</strong> nous ferons prochainement un petit groupe pour faciliter le covoiturage.</p>
+  </div>
+  <div class="tip">
+    <div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div>
+    <p><strong>Un mot sur les chaussures :</strong> la cérémonie et le vin d'honneur se passent sur une pelouse, pas sur du gravier. Les talons fins s'y plantent. Talons larges, compensées ou plates : vous nous remercierez vers minuit.</p>
+  </div>
+</section>
+
+<div class="rule"><div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div></div>
+
+<section id="dormir" class="wrap">
+  <div class="secHead"><h2>Où dormir</h2></div>
+  <p class="secNote">Onze gîtes, chambres d'hôtes et locations repérés à moins de 14 km du jardin, soit 182 couchages au total. <strong>Rien n'est réservé ni pré-bloqué</strong> : cette liste est là pour vous faire gagner du temps, chacun réserve de son côté — et plutôt tôt, un samedi de fin mai en Anjou se remplit vite.</p>
+  <div class="tip">
+    <div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div>
+    <p><strong>Dormir sous la tente :</strong> pour ceux qui le souhaitent, il est possible de planter sa tente dans le jardin et de passer la nuit sur place. Dites-le nous dans le formulaire de réponse, que nous sachions combien vous êtes.</p>
+  </div>
+  <div class="filters" role="group" aria-label="Filtrer les hébergements">
+    <button class="chip" type="button" data-filter="all" aria-pressed="true">Tout (11)</button>
+    <button class="chip" type="button" data-filter="near" aria-pressed="false">À moins de 5 km</button>
+    <button class="chip" type="button" data-filter="group" aria-pressed="false">Pour un groupe (15 couchages et plus)</button>
+  </div>
+  <div class="stays" id="stays">
+    <div class="stay" data-km="3" data-cap="32">
+      <div class="km">3<small>km</small></div>
+      <div><div class="name"><a href="https://www.theoriginalshotels.com/hotels/chateau-de-briancon" target="_blank" rel="noopener">Château de Briançon</a></div><div class="meta">Château et gîte de groupe · Loire-Authion (Bauné)</div></div>
+      <div class="cap"><b>32</b> couchages<br>14 chambres</div>
+    </div>
+    <div class="stay" data-km="3.7" data-cap="10">
+      <div class="km">3,7<small>km</small></div>
+      <div><div class="name"><a href="http://www.loire-authion.com/" target="_blank" rel="noopener">Les Genêts Corné</a></div><div class="meta">Chambres d'hôtes / Airbnb · Loire-Authion (Corné)</div></div>
+      <div class="cap"><b>10</b> couchages<br>4 chambres</div>
+    </div>
+    <div class="stay" data-km="4.8" data-cap="10">
+      <div class="km">4,8<small>km</small></div>
+      <div><div class="name"><a href="https://www.leclosmarie49.fr/" target="_blank" rel="noopener">Le Clos Marie 49</a></div><div class="meta">Gîte et chambres d'hôtes · Mazé-Milon</div></div>
+      <div class="cap"><b>10</b> couchages<br>3 chambres</div>
+    </div>
+    <div class="stay" data-km="5.5" data-cap="6">
+      <div class="km">5,5<small>km</small></div>
+      <div><div class="name"><a href="https://lesgaudouines.fr/" target="_blank" rel="noopener">Les Gaudouines</a></div><div class="meta">Maison et table d'hôtes · Mazé-Milon</div></div>
+      <div class="cap"><b>6</b> couchages<br>3 chambres</div>
+    </div>
+    <div class="stay" data-km="6.4" data-cap="15">
+      <div class="km">6,4<small>km</small></div>
+      <div><div class="name"><a href="http://www.lisle-loire.fr/" target="_blank" rel="noopener">L'Isle-Loire Gîtes de Tourisme</a></div><div class="meta">Ensemble de gîtes · Mazé-Milon</div></div>
+      <div class="cap"><b>15</b> couchages<br>6 chambres</div>
+    </div>
+    <div class="stay" data-km="9.6" data-cap="12">
+      <div class="km">9,6<small>km</small></div>
+      <div><div class="name"><a href="https://maps.google.com/?cid=7145574803977804484" target="_blank" rel="noopener">Au gré de la Loire</a></div><div class="meta">Gîte / Airbnb, piscine et spa · Loire-Authion</div></div>
+      <div class="cap"><b>12</b> couchages<br>4 chambres</div>
+    </div>
+    <div class="stay" data-km="10.9" data-cap="25">
+      <div class="km">10,9<small>km</small></div>
+      <div><div class="name"><a href="http://www.logis-de-poellier.fr/" target="_blank" rel="noopener">Logis de Poëllier</a></div><div class="meta">Domaine, gîtes et chambres d'hôtes · Baugé-en-Anjou</div></div>
+      <div class="cap"><b>25</b> couchages<br>8 chambres</div>
+    </div>
+    <div class="stay" data-km="12.3" data-cap="8">
+      <div class="km">12,3<small>km</small></div>
+      <div><div class="name"><a href="https://www.anjou-tourisme.com/fr/diffusio/locations-vacances/gite-le-chat-qui-peche-brissac-loire-aubance_TFOHLOPDL049V50APM4" target="_blank" rel="noopener">Gîte Le Chat qui pêche</a></div><div class="meta">Gîtes de France, gîte rural · Brissac Loire Aubance</div></div>
+      <div class="cap"><b>8</b> couchages<br>3 chambres</div>
+    </div>
+    <div class="stay" data-km="12.4" data-cap="20">
+      <div class="km">12,4<small>km</small></div>
+      <div><div class="name"><a href="https://desradisetdeshommes1.wordpress.com/" target="_blank" rel="noopener">Des Radis et des Hommes</a></div><div class="meta">Gîte d'étape et bivouac · Brissac (Saint-Rémy)</div></div>
+      <div class="cap"><b>20</b> couchages<br>5 chambres</div>
+    </div>
+    <div class="stay" data-km="13" data-cap="4">
+      <div class="km">13<small>km</small></div>
+      <div><div class="name"><a href="https://www.gites-de-france-anjou.com/" target="_blank" rel="noopener">Gîte de la Belle Écuelle</a></div><div class="meta">Gîtes de France · Coutures / Brissac</div></div>
+      <div class="cap"><b>4</b> couchages<br>2 chambres</div>
+    </div>
+    <div class="stay" data-km="13.7" data-cap="40">
+      <div class="km">13,7<small>km</small></div>
+      <div><div class="name"><a href="https://hotellafauvelaie.top/" target="_blank" rel="noopener">La Fauvelaie</a></div><div class="meta">Gîte de groupe / résidence · Verrières-en-Anjou</div></div>
+      <div class="cap"><b>40</b> couchages<br>12 chambres</div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"><div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div></div>
+
+<section id="repondre" class="wrap">
+  <div class="secHead"><h2>Serez-vous des nôtres&nbsp;?</h2></div>
+  <p class="secNote">Une seule réponse par foyer suffit, et <strong>merci de nous répondre avant le 15 janvier 2027</strong>. Si quelque chose change ensuite, écrivez-nous, nous corrigerons.</p>
+
+  <form class="formWrap" id="rsvpForm" novalidate>
+    <div class="field">
+      <label for="f-nom">Vos noms <span class="hint">— qui répond&nbsp;?</span></label>
+      <input id="f-nom" name="nom" type="text" autocomplete="name" placeholder="Camille et Jean Dupont">
+    </div>
+
+    <div class="fieldRow">
+      <div class="field">
+        <label for="f-email">E-mail</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" placeholder="camille.dupont@exemple.fr">
+      </div>
+      <div class="field">
+        <label for="f-tel">Téléphone <span class="hint">— facultatif</span></label>
+        <input id="f-tel" name="tel" type="tel" autocomplete="tel" placeholder="06 12 34 56 78">
+      </div>
+    </div>
+
+    <div class="field spaced">
+      <label id="lbl-presence">Votre réponse</label>
+      <div class="radioSet" role="radiogroup" aria-labelledby="lbl-presence">
+        <label for="f-oui"><input id="f-oui" type="radio" name="presence" value="Présent"> Oui, nous serons là</label>
+        <label for="f-non"><input id="f-non" type="radio" name="presence" value="Absent"> Non, hélas</label>
+      </div>
+    </div>
+
+    <div id="blocPresent" hidden>
+      <div class="field spaced">
+        <label for="f-noms">Qui sera présent&nbsp;? <span class="hint">— un nom par ligne</span></label>
+        <p class="aide">Écrivez le prénom et le nom de <strong>chaque personne qui vient</strong>. Si vous venez en famille, il nous faut la liste complète et pas seulement votre nom : c'est elle qui sert au plan de table et au traiteur.</p>
+        <textarea id="f-noms" name="noms" rows="4" placeholder="Camille Dupont
+Jean Dupont"></textarea>
+      </div>
+      <div class="field spaced">
+        <label for="f-regime">Allergies ou régimes alimentaires</label>
+        <input id="f-regime" name="regime" type="text" placeholder="Une personne végétarienne, une allergie aux fruits à coque">
+      </div>
+      <div class="field spaced">
+        <label for="f-logement">Où dormirez-vous&nbsp;?</label>
+        <select id="f-logement" name="logement">
+          <option value="">Je ne sais pas encore</option>
+          <option>Je dors sur place et j'apporte ma tente</option>
+          <option>Je me débrouille</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field spaced">
+      <label for="f-mot">Un mot pour nous <span class="hint">— facultatif</span></label>
+      <textarea id="f-mot" name="mot" placeholder="Ce que vous voulez."></textarea>
+    </div>
+
+    <div class="submitRow">
+      <button class="btnMain" type="submit" id="rsvpSubmit">Envoyer notre réponse</button>
+      <span class="small">Vos réponses ne servent qu'à organiser la journée.</span>
+    </div>
+    <div class="formMsg" id="rsvpMsg" role="status" aria-live="polite"></div>
+  </form>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="seal"><img src="escargot.png" alt="Colimaçon peint à l'aquarelle, emblème du mariage"></div>
+    <p class="sig">À très bientôt,</p>
+    <p class="fine">Hanna &amp; Alex — samedi 29 mai 2027, Cornillé-les-Caves (49).<br>
+    Une question&nbsp;? Écrivez-nous : <a href="mailto:hanna.oblin@gmail.com">hanna.oblin@gmail.com</a>
+    ou <a href="mailto:alexgraignic@gmail.com">alexgraignic@gmail.com</a>.</p>
+  </div>
+</footer>
+
+<script>
+/* ---- Collecteur de réponses ---------------------------------------
+   Version hébergée hors du bac à sable des Artifacts : la page envoie
+   elle-même les réponses au formulaire Google (POST « no-cors »).
+   La réponse de Google est illisible depuis la page : on ne peut donc
+   pas confirmer l'enregistrement, seulement l'envoi. En cas d'échec
+   réseau, on propose le formulaire Google pré-rempli en secours.      */
+var RSVP_ENVOI = "https://docs.google.com/forms/d/e/1FAIpQLSfM_8uaC9qWZkFu9zZDlYuFm3MNxXKMf_NucqyUnTx6UU9rUQ/formResponse";
+var RSVP_FORMULAIRE ="https://docs.google.com/forms/d/e/1FAIpQLSfM_8uaC9qWZkFu9zZDlYuFm3MNxXKMf_NucqyUnTx6UU9rUQ/viewform";
+var RSVP_CHAMPS = {
+  nom:      "entry.1118585569",
+  email:    "entry.484415089",
+  tel:      "entry.2015981944",
+  presence: "entry.213618844",
+  noms:     "entry.1097730765",
+  regime:   "entry.1418103471",
+  logement: "entry.511685134",
+  mot:      "entry.698017143"
+};
+
+/* ---- Compte à rebours ---- */
+(function () {
+  var el = document.getElementById("countdown");
+  if (!el) return;
+  var cible = new Date(2027, 4, 29, 12, 0, 0);
+  var jours = Math.ceil((cible - new Date()) / 86400000);
+  if (jours > 1) el.textContent = jours + " jours";
+  else if (jours === 1) el.textContent = "un jour";
+  else if (jours === 0) el.textContent = "c'est aujourd'hui";
+  else el.textContent = "et c'était beau";
+})();
+
+/* ---- Filtres hébergements ---- */
+(function () {
+  var chips = Array.prototype.slice.call(document.querySelectorAll(".chip"));
+  var stays = Array.prototype.slice.call(document.querySelectorAll("#stays .stay"));
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var f = chip.dataset.filter;
+      chips.forEach(function (c) { c.setAttribute("aria-pressed", String(c === chip)); });
+      stays.forEach(function (s) {
+        var km = parseFloat(s.dataset.km);
+        var cap = parseInt(s.dataset.cap, 10);
+        s.hidden = (f === "near" && km > 5) || (f === "group" && cap < 15);
+      });
+    });
+  });
+})();
+
+/* ---- Champs conditionnels ---- */
+(function () {
+  var bloc = document.getElementById("blocPresent");
+  Array.prototype.slice.call(document.querySelectorAll('input[name="presence"]')).forEach(function (r) {
+    r.addEventListener("change", function () { bloc.hidden = (r.value !== "Présent"); });
+  });
+})();
+
+/* ---- Envoi ---- */
+(function () {
+  var form = document.getElementById("rsvpForm");
+  var msg = document.getElementById("rsvpMsg");
+  var bouton = document.getElementById("rsvpSubmit");
+
+  function dire(texte, type) {
+    msg.textContent = texte;
+    msg.className = "formMsg show " + type;
+  }
+
+  function lienDeSecours(data) {
+    var params = ["usp=pp_url"];
+    Object.keys(RSVP_CHAMPS).forEach(function (cle) {
+      var valeur = data.get(cle);
+      if (valeur == null || String(valeur) === "") return;
+      params.push(encodeURIComponent(RSVP_CHAMPS[cle]) + "=" + encodeURIComponent(String(valeur)));
+    });
+    return RSVP_FORMULAIRE + "?" + params.join("&");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var data = new FormData(form);
+
+    if (!String(data.get("nom") || "").trim()) {
+      dire("Il nous manque votre nom pour savoir qui répond.", "err");
+      document.getElementById("f-nom").focus();
+      return;
+    }
+    if (!data.get("presence")) {
+      dire("Dites-nous simplement si vous serez là ou non.", "err");
+      document.getElementById("f-oui").focus();
+      return;
+    }
+
+    var corps = new URLSearchParams();
+    Object.keys(RSVP_CHAMPS).forEach(function (cle) {
+      var valeur = data.get(cle);
+      if (valeur != null && String(valeur) !== "") corps.append(RSVP_CHAMPS[cle], String(valeur));
+    });
+
+    bouton.disabled = true;
+    bouton.textContent = "Envoi…";
+
+    fetch(RSVP_ENVOI, { method: "POST", mode: "no-cors", body: corps })
+      .then(function () {
+        Array.prototype.slice.call(form.querySelectorAll("input, select, textarea, button"))
+          .forEach(function (c) { c.disabled = true; });
+        bouton.textContent = "Réponse envoyée";
+        dire("Merci, votre réponse est envoyée ! Pour la modifier, écrivez-nous.", "ok");
+      })
+      .catch(function () {
+        bouton.disabled = false;
+        bouton.textContent = "Envoyer notre réponse";
+        dire("L'envoi n'a pas abouti (connexion ?). Réessayez, ou utilisez le formulaire de secours :", "err");
+        var a = document.createElement("a");
+        a.href = lienDeSecours(data);
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = " ouvrir le formulaire pré-rempli";
+        msg.appendChild(a);
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
