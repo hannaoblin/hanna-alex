@@ -469,6 +469,12 @@ footer .tba{color:var(--peach)}
     </div>
 
     <div class="field spaced">
+      <label for="f-adresse">Adresse postale <span class="hint">— pour vous envoyer le faire-part</span></label>
+      <textarea id="f-adresse" name="adresse" rows="3" autocomplete="street-address" placeholder="12 rue des Lilas
+49000 Angers"></textarea>
+    </div>
+
+    <div class="field spaced">
       <label id="lbl-presence">Votre réponse</label>
       <div class="radioSet" role="radiogroup" aria-labelledby="lbl-presence">
         <label for="f-oui"><input id="f-oui" type="radio" name="presence" value="Présent"> Oui, nous serons là</label>
@@ -504,7 +510,7 @@ Jean Dupont"></textarea>
 
     <div class="submitRow">
       <button class="btnMain" type="submit" id="rsvpSubmit">Envoyer notre réponse</button>
-      <span class="small">Vos réponses ne servent qu'à organiser la journée.</span>
+      <span class="small">Vos réponses et votre adresse ne servent qu'à organiser la journée et à vous envoyer le faire-part.</span>
     </div>
     <div class="formMsg" id="rsvpMsg" role="status" aria-live="polite"></div>
   </form>
@@ -534,6 +540,7 @@ var RSVP_CHAMPS = {
   nom:      "entry.1118585569",
   email:    "entry.484415089",
   tel:      "entry.2015981944",
+  adresse:  "entry.401923701",
   presence: "entry.213618844",
   noms:     "entry.1097730765",
   regime:   "entry.1418103471",
@@ -675,6 +682,11 @@ var RSVP_CHAMPS = {
     if (!String(data.get("nom") || "").trim()) {
       dire("Il nous manque votre nom pour savoir qui répond.", "err");
       document.getElementById("f-nom").focus();
+      return;
+    }
+    if (!String(data.get("adresse") || "").trim()) {
+      dire("Il nous manque votre adresse postale pour vous envoyer le faire-part.", "err");
+      document.getElementById("f-adresse").focus();
       return;
     }
     if (!data.get("presence")) {
