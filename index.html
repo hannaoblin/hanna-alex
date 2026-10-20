@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#1C4133">
 <script>
 /* Ouverture animée : une fois par visite, jamais si l'appareil demande moins d'animations.
    Pour la revoir : ajouter ?intro à l'adresse. */
@@ -35,32 +37,7 @@
   --hero-bg:#1C4133; --hero-ink:#FAF4E9; --hero-muted:#A7C0AB;
   --shadow:0 1px 2px rgba(42,29,31,.06), 0 10px 30px rgba(42,29,31,.08);
   --r:5px;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:#171512; --surface:#201D18; --surface-2:#282318;
-    --ink:#F0E8DA; --muted:#A2938A; --line:#3A332A; --line-soft:#2C2721;
-    --bottle:#8FBE9B; --bottle-ink:#A9D2B2; --bottle-soft:#1D2B22; --on-bottle:#12201A;
-    --prairie:#A8CC6C;
-    --bordeaux:#E08CA0; --bordeaux-soft:#331A20;
-    --raspberry:#E7789F;
-    --coquelicot:#F26B51; --coquelicot-ink:#F98A72;
-    --peach:#E9C193; --peach-soft:#2E2519;
-    --hero-bg:#10231C; --hero-ink:#F0E8DA; --hero-muted:#8FA894;
-    --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.4);
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#171512; --surface:#201D18; --surface-2:#282318;
-  --ink:#F0E8DA; --muted:#A2938A; --line:#3A332A; --line-soft:#2C2721;
-  --bottle:#8FBE9B; --bottle-ink:#A9D2B2; --bottle-soft:#1D2B22; --on-bottle:#12201A;
-  --prairie:#A8CC6C;
-  --bordeaux:#E08CA0; --bordeaux-soft:#331A20;
-  --raspberry:#E7789F;
-  --coquelicot:#F26B51; --coquelicot-ink:#F98A72;
-  --peach:#E9C193; --peach-soft:#2E2519;
-  --hero-bg:#10231C; --hero-ink:#F0E8DA; --hero-muted:#8FA894;
-  --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.4);
+  color-scheme:only light;
 }
 *{box-sizing:border-box}
 [hidden]{display:none !important}
@@ -80,9 +57,8 @@ button,input,select,textarea{font:inherit; color:inherit}
 .eyebrow{font-size:11px; letter-spacing:.15em; text-transform:uppercase; font-weight:600; color:var(--muted)}
 
 /* ---------- emblème colimaçon ---------- */
-.seal{display:grid; place-items:center; border-radius:50%; background:#FAF4E9;
-      border:1px solid rgba(42,29,31,.10); flex:none; overflow:hidden}
-.seal img{width:82%; height:auto; mix-blend-mode:multiply}
+.seal{display:block; border-radius:50%; flex:none}
+.seal img{display:block; width:100%; height:100%; border-radius:50%; box-shadow:0 0 0 1px rgba(42,29,31,.12)}
 
 /* ---------- hero ---------- */
 .hero{background:var(--hero-bg); color:var(--hero-ink); position:relative; overflow:hidden}
@@ -286,7 +262,7 @@ footer .tba{color:var(--peach)}
 <div id="intro" aria-hidden="true">
   <div class="voile"></div>
   <div class="traine"></div>
-  <div class="limace seal"><img src="escargot.png" alt=""></div>
+  <div class="limace seal"><img src="medaillon.png" alt=""></div>
 </div>
 
 <header class="hero">
@@ -312,11 +288,11 @@ footer .tba{color:var(--peach)}
           <img class="shot" src="couple.jpg" alt="Hanna et Alex dans un parc, elle en chapeau canotier fait un signe de la main">
         </div>
         <figcaption class="cap">Hanna &amp; Alex</figcaption>
-        <div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div>
+        <div class="seal" aria-hidden="true"><img src="medaillon.png" alt=""></div>
       </figure>
     </div>
   </div>
-  <div class="crawler seal" aria-hidden="true"><img src="escargot.png" alt=""></div>
+  <div class="crawler seal" aria-hidden="true"><img src="medaillon.png" alt=""></div>
 </header>
 <div class="scallop" aria-hidden="true"></div>
 
@@ -328,7 +304,7 @@ footer .tba{color:var(--peach)}
     <a href="#repondre">Répondre</a>
   </div>
   <div class="trail" aria-hidden="true"></div>
-  <div class="walker seal" aria-hidden="true"><img src="escargot.png" alt=""></div>
+  <div class="walker seal" aria-hidden="true"><img src="medaillon.png" alt=""></div>
 </nav>
 
 <main>
@@ -340,7 +316,7 @@ footer .tba{color:var(--peach)}
   <p class="secNote">Nous préciserons ici le déroulé et les horaires de la journée avant l'envoi des faire-part.</p>
 </section>
 
-<div class="rule"><div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div></div>
+<div class="rule"><div class="seal" aria-hidden="true"><img src="medaillon.png" alt=""></div></div>
 
 <section id="venir" class="wrap">
   <div class="secHead"><h2>Venir &amp; se garer</h2></div>
@@ -363,22 +339,22 @@ footer .tba{color:var(--peach)}
     </div>
   </div>
   <div class="tip">
-    <div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div>
+    <div class="seal" aria-hidden="true"><img src="medaillon.png" alt=""></div>
     <p><strong>Covoiturage :</strong> nous ferons prochainement un petit groupe pour faciliter le covoiturage.</p>
   </div>
   <div class="tip">
-    <div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div>
+    <div class="seal" aria-hidden="true"><img src="medaillon.png" alt=""></div>
     <p><strong>Un mot sur les chaussures :</strong> la cérémonie et le vin d'honneur se passent sur une pelouse, pas sur du gravier. Les talons fins s'y plantent. Talons larges, compensées ou plates : vous nous remercierez vers minuit.</p>
   </div>
 </section>
 
-<div class="rule"><div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div></div>
+<div class="rule"><div class="seal" aria-hidden="true"><img src="medaillon.png" alt=""></div></div>
 
 <section id="dormir" class="wrap">
   <div class="secHead"><h2>Où dormir</h2></div>
   <p class="secNote">Onze gîtes, chambres d'hôtes et locations repérés à moins de 14 km du jardin, soit 182 couchages au total. <strong>Rien n'est réservé ni pré-bloqué</strong> : cette liste est là pour vous faire gagner du temps, chacun réserve de son côté — et plutôt tôt, un samedi de fin mai en Anjou se remplit vite.</p>
   <div class="tip">
-    <div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div>
+    <div class="seal" aria-hidden="true"><img src="medaillon.png" alt=""></div>
     <p><strong>Dormir sous la tente :</strong> pour ceux qui le souhaitent, il est possible de planter sa tente dans le jardin et de passer la nuit sur place. Dites-le nous dans le formulaire de réponse, que nous sachions combien vous êtes.</p>
   </div>
   <div class="filters" role="group" aria-label="Filtrer les hébergements">
@@ -445,7 +421,7 @@ footer .tba{color:var(--peach)}
   </div>
 </section>
 
-<div class="rule"><div class="seal" aria-hidden="true"><img src="escargot.png" alt=""></div></div>
+<div class="rule"><div class="seal" aria-hidden="true"><img src="medaillon.png" alt=""></div></div>
 
 <section id="repondre" class="wrap">
   <div class="secHead"><h2>Serez-vous des nôtres&nbsp;?</h2></div>
@@ -519,7 +495,7 @@ Jean Dupont"></textarea>
 
 <footer>
   <div class="wrap">
-    <div class="seal"><img src="escargot.png" alt="Colimaçon peint à l'aquarelle, emblème du mariage"></div>
+    <div class="seal"><img src="medaillon.png" alt="Colimaçon peint à l'aquarelle, emblème du mariage"></div>
     <p class="sig">À très bientôt,</p>
     <p class="fine">Hanna &amp; Alex — samedi 29 mai 2027, Cornillé-les-Caves (49).<br>
     Une question&nbsp;? Écrivez-nous : <a href="mailto:hanna.oblin@gmail.com">hanna.oblin@gmail.com</a>
